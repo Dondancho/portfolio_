@@ -1,0 +1,26 @@
+.user{
+	display: flex;
+}
+.user__avatar{
+	width: 57px;
+    height: 57px;
+
+	border-radius: 50%;
+	
+	background: url(../img/avatar.jpg) top center no-repeat;
+	background-size: contain;
+}
+.user__content{
+	padding-left: 9px;
+}
+.user__name{
+	font-size: 1.07rem;
+	line-height: 1.2;
+	color: $black;
+	font-weight: 700;
+	margin-bottom: 3px;
+}
+.user__prof{
+	font-size: 0.8rem;
+	color: rgba($black,.7);
+}

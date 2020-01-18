@@ -1,0 +1,53 @@
+//abstracts
+@import 'abstracts/_variables.scss';
+//Base
+@import 'base/_typography.scss';
+
+html{
+	font-size: 15px;
+}
+body{
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1rem;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+}
+
+*, *:before, *:after{
+	box-sizing: border-box;
+}
+
+
+//vendors
+@import 'vendors/_slick.scss';
+
+
+//layout
+@import 'layout/_container.scss';
+@import 'layout/_header.scss';
+@import 'layout/_user.scss';
+@import 'layout/_nav.scss';
+@import 'layout/_intro.scss';
+@import 'layout/_social.scss';
+@import 'layout/_btn.scss';
+@import 'layout/_works.scss';
+@import 'layout/_portfolio.scss';
+@import 'layout/_work.scss';
+@import 'layout/_about.scss';
+@import 'layout/_reviews.scss';
+@import 'layout/_news.scss';
+@import 'layout/_articles.scss';
+@import 'layout/_footer.scss';
+@import 'layout/_modal.scss';
+@import 'layout/_modal__work.scss';
+@import 'layout/_timeline.scss';
+@import 'layout/_skils.scss';
+@import 'layout/_contact.scss';
+@import 'layout/_form.scss';
+@import 'layout/_burger.scss';

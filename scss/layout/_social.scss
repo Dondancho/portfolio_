@@ -1,0 +1,17 @@
+.social{
+	display: flex;
+	margin-bottom: 42px;
+	
+	@media (max-width: 815px){
+		margin-bottom: 20px;
+	}
+}
+.social__link{
+	margin-right: 10px;
+
+    transition: .2s;
+
+	&:hover{
+		transform: translateY(-5px);
+	}
+}

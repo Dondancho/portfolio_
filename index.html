@@ -7,9 +7,26 @@
     <link rel="stylesheet" href="css/main.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Данил Яковлев. Портфолио. </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+    $preloader = $('.loaderArea'),
+      $loader = $preloader.find('.load');
+    $loader.fadeOut();
+    $preloader.delay(150).fadeOut('slow');
+  });
+</script>
 </head>
 
 <body>
+    <div class="loaderArea">
+        <div class="load">
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+        </div>
+    </div>
     <!-- Шапка -->
     <header class="header">
         <div class="container">
@@ -19,16 +36,16 @@
                     </div>
                     <div class="user__content">
                         <div class="user__name">
-                            Данил <br> Яковлев
+                            Портфолио
                         </div>
-                        <div class="user__prof">JuniorFrontend-разработчик</div>
+                        <div class="user__prof">JuniorFrontend-разработчика</div>
                     </div>
                 </div>
                 <nav class="nav" id="nav">
                     <a class="nav__link" href="#works">Работы</a>
                     <a class="nav__link" href="#about">обо мне</a>
                     <a class="nav__link" href="#news">блог</a>
-                    <a data-modal="#modal_hire_me" class="nav__link nav__link--btn" href="#">Для связи</a>
+                    <a data-modal="#modal_hire_me" class="nav__link nav__link--btn animated pulse infinite" href="#">Для связи</a>
                 </nav>
                 <button class="burger" type="button" id="navToggle">
                     <img class="burger__icon" src="img/burger.svg" alt="">
@@ -36,209 +53,263 @@
             </div>
         </div>
     </header>
-    <!-- Интро -->
-    <section class="intro">
-        <div class="container">
-            <div class="intro__inner">
-                <div class="intro__content">
-                    <h2 class="intro__subtitle">Привет, меня зовут</h2>
-                    <h1 class="intro__title">Данил Яковлев</h1>
-                    <p class="intro_text">JuniorFrontend-разработчик</p>
-                    <div class="social">
-                        <a target="_blank" class="social__link" href="https://vk.com/danil_yakovlev_live"><img src="img/vk.png" alt=""></a>
-                        <a target="_blank" class="social__link" href="https://www.facebook.com/profile.php?id=100009033041701"><img src="img/fb.png" alt=""></a>
-                        <a target="_blank" class="social__link" href="https://www.instagram.com/yakovlev_insta/"><img src="img/instagram.png" alt=""></a>
-                        <a target="_blank" class="social__link" href="https://twitter.com/DodaMaster"><img src="img/twitter.png" alt=""></a>
+    <div class="main-slider">
+        <!-- Интро -->
+        <section class="intro">
+            <div class="container">
+                <div class="intro__inner">
+                    <div class="intro__content">
+                        <h2 class="intro__subtitle">Привет, меня зовут</h2>
+                        <h1 class="intro__title">Данил Яковлев</h1>
+                        <p class="intro_text">JuniorFrontend-разработчик</p>
+                        <div class="social">
+                            <a target="_blank" class="social__link" href="https://vk.com/danil_yakovlev_live"><img src="img/vk.png" alt=""></a>
+                            <a target="_blank" class="social__link" href="https://www.facebook.com/profile.php?id=100009033041701"><img src="img/fb.png" alt=""></a>
+                            <a target="_blank" class="social__link" href="https://www.instagram.com/yakovlev_insta/"><img src="img/instagram.png" alt=""></a>
+                            <a target="_blank" class="social__link" href="https://twitter.com/DodaMaster"><img src="img/twitter.png" alt=""></a>
+                        </div>
+                        <a href="#" class="btn" data-modal="#modal_hire_me">для связи</a>
+                        <button id="works" type="button" class="btn" data-modal="#modal_resume">Резюме</button>
                     </div>
-                    <a href="#" class="btn" data-modal="#modal_hire_me">для связи</a>
-                    <button id="works" type="button" class="btn" data-modal="#modal_resume">Резюме</button>
+                    <img width="430" class="intro__photo" src="img/intro__photo.png" alt="frontender">
+                </div> <!-- /.intro__inner -->
+            </div> <!-- /.container -->
+        </section>
+        <!-- Works -->
+        <div class="works">
+            <div class="container">
+                <div class="works__nav">
+                    <a href="#" class="works__nav-link" data-filter="all">Все работы</a>
+                    <a href="#" class="works__nav-link" data-filter="vid">По видеоурокам</a>
+                    <a href="#" class="works__nav-link" data-filter="my">Самостоятельные</a>
+                    <a href="#" class="works__nav-link" data-filter="job">Заказы</a>
+                    <a href="#" class="works__nav-link" data-filter="fich">Фичи</a>
                 </div>
-                <img width="430" class="intro__photo" src="img/intro__photo.png" alt="frontender">
-            </div> <!-- /.intro__inner -->
-        </div> <!-- /.container -->
-    </section>
-    <!-- Works -->
-    <div class="works">
-        <div class="container">
-            <div class="works__nav">
-                <a href="#" class="works__nav-link" data-filter="all">Все</a>
-                <a href="#" class="works__nav-link" data-filter="vid">По видеоурокам</a>
-                <a href="#" class="works__nav-link" data-filter="my">Самостоятельные</a>
-                <a href="#" class="works__nav-link" data-filter="job">Заказы</a>
-            </div>
-            <div class="portfolio">
-                <a target="_blank" href="pages/webdevelop/index.html">
-                    <div class="portfolio__col" data-cat="vid">
-                        <div class="work">
-                            <img class="work_image" src="img/work1.png" alt="">
-                            <div class="work__content">
-                                <div class="work__cat">Категория: По видеоурокам</div>
-                                <div class="work__title">
-                                    MY COMPANY
-                                    <time class="work__date" datetime="2019-11-22 19:00">2019</time>
+                <div class="portfolio">
+                    <a target="_blank" href="pages/webdevelop/index.html">
+                        <div class="portfolio__col" data-cat="vid">
+                            <div class="work">
+                                <img class="work_image" src="img/work1.png" alt="">
+                                <div class="work__content">
+                                    <div class="work__cat">Категория: По видеоурокам</div>
+                                    <div class="work__title">
+                                        MY COMPANY
+                                        <time class="work__date" datetime="2019-11-22 19:00">2019</time>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <a target="_blank" href="pages/goSurf/index.html">
-                    <div class="portfolio__col" data-cat="vid">
-                        <div class="work">
-                            <img class="work_image" src="img/work2.png" alt="">
-                            <div class="work__content">
-                                <div class="work__cat">Категория: По видеоурокам</div>
-                                <div class="work__title">
-                                    GO SURF
-                                    <time class="work__date" datetime="2019-11-22 19:00">2020</time>
+                    </a>
+                    <a target="_blank" href="pages/goSurf/index.html">
+                        <div class="portfolio__col" data-cat="vid">
+                            <div class="work">
+                                <img class="work_image" src="img/work2.png" alt="">
+                                <div class="work__content">
+                                    <div class="work__cat">Категория: По видеоурокам</div>
+                                    <div class="work__title">
+                                        GO SURF
+                                        <time class="work__date" datetime="2019-11-22 19:00">2020</time>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </a>
+                    <a target="_blank" href="#">
+                        <div class="portfolio__col" data-cat="my">
+                            <div class="work">
+                                <img class="work_image" src="https://placehold.it/370x300" alt="">
+                                <div class="work__content">
+                                    <div class="work__cat">Категория: самостоятельные</div>
+                                    <div class="work__title">
+                                        В работе
+                                        <time class="work__date" datetime="2019-11-22 19:00">2020</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="#">
+                        <div class="portfolio__col" data-cat="my">
+                            <div class="work">
+                                <img class="work_image" src="https://placehold.it/370x300" alt="">
+                                <div class="work__content">
+                                    <div class="work__cat">Категория: самостоятельные</div>
+                                    <div class="work__title">
+                                        В работе
+                                        <time class="work__date" datetime="2019-11-22 19:00">2020</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="#">
+                        <div class="portfolio__col" data-cat="job">
+                            <div class="work">
+                                <img class="work_image" src="https://placehold.it/370x300" alt="">
+                                <div class="work__content">
+                                    <div class="work__cat">Категория: заказы</div>
+                                    <div class="work__title">
+                                        В работе
+                                        <time class="work__date" datetime="2019-11-22 19:00">2020</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="#">
+                        <div class="portfolio__col" data-cat="fich">
+                            <div class="work">
+                                <img class="work_image" src="https://placehold.it/370x300" alt="">
+                                <div class="work__content">
+                                    <div class="work__cat">Категория: фичи</div>
+                                    <div class="work__title">
+                                        В работе
+                                        <time class="work__date" datetime="2019-11-22 19:00">2020</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div><!-- /.portfolio -->
+            </div><!-- /.container -->
+        </div> <!-- /.works -->
+        <!-- about -->
+        <section class="about">
+            <div class="container">
+                <div class="about__inner">
+                    <div class="about__photo">
+                        <img class="img" src="img/aboutme_photo.png" alt="frontender">
                     </div>
-                </a>
-            </div>
-        </div>
-    </div> <!-- /.portfolio -->
-    <div class="text-center">
-        <a id="about" href="#" class="btn btn--sm">LOAD MORE WORK</a>
+                    <div class="about__content">
+                        <h3 class="about__title">ABOUT ME</h3>
+                        <h2 class="about__bigtitle">WHO AM I</h2>
+                        <div class="about__text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tenetur facilis possimus, voluptate fugit nesciunt dignissimos libero enim, eligendi aspernatur nam, officia temporibus iure sunt. Error laudantium nam, quam! Quam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tenetur facilis possimus, voluptate fugit nesciunt dignissimos libero enim, eligendi aspernatur nam, officia temporibus iure sunt. Error laudantium nam, quam! Quam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tenetur facilis possimus, voluptate fugit nesciunt dignissimos libero enim, eligendi aspernatur nam, officia temporibus iure sunt. Error laudantium nam, quam! Quam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tenetur facilis possimus, voluptate fugit nesciunt dignissimos libero enim, eligendi aspernatur nam, officia temporibus iure sunt. Error laudantium nam, quam! Quam.</p>
+                        </div>
+                        <a href="#" class="btn">HIRE ME</a>
+                        <button type="button" class="btn">SEE MY RESUME</button>
+                    </div><!-- /.about__content -->
+                </div><!-- /.about__inner -->
+            </div><!-- /.container -->
+        </section><!-- /.about -->
     </div>
-    </div> <!-- /.container -->
-    </div> <!-- /.works -->
-    <!-- about -->
-    <section class="about">
-        <div class="container">
-            <div class="about__inner">
-                <div class="about__photo">
-                    <img class="img" src="img/aboutme_photo.png" alt="frontender">
-                </div>
-                <div class="about__content">
-                    <h3 class="about__title">ABOUT ME</h3>
-                    <h2 class="about__bigtitle">WHO AM I</h2>
-                    <div class="about__text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tenetur facilis possimus, voluptate fugit nesciunt dignissimos libero enim, eligendi aspernatur nam, officia temporibus iure sunt. Error laudantium nam, quam! Quam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tenetur facilis possimus, voluptate fugit nesciunt dignissimos libero enim, eligendi aspernatur nam, officia temporibus iure sunt. Error laudantium nam, quam! Quam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tenetur facilis possimus, voluptate fugit nesciunt dignissimos libero enim, eligendi aspernatur nam, officia temporibus iure sunt. Error laudantium nam, quam! Quam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam tenetur facilis possimus, voluptate fugit nesciunt dignissimos libero enim, eligendi aspernatur nam, officia temporibus iure sunt. Error laudantium nam, quam! Quam.</p>
-                    </div>
-                    <a href="#" class="btn">HIRE ME</a>
-                    <button type="button" class="btn">SEE MY RESUME</button>
-                </div><!-- /.about__content -->
-            </div><!-- /.about__inner -->
-        </div><!-- /.container -->
-    </section><!-- /.about -->
     <!-- reviews -->
-    <div class="reviews">
-        <div class="container">
-            <div class="reviews__item">
-                <div class="reviews__text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis id inventore, ratione error similique, impedit quo voluptatibus repudiandae cupiditate dignissimos fugit excepturi eos incidunt quasi placeat amet, quibusdam quaerat!</p>
-                </div>
-                <div class="reviews__author">
-                    <img class="reviews__photo" src="https://placehold.it/103/333" alt="">
-                    <div class="reviews__name">Edward M. Brooks</div>
-                    <div class="reviews__company">Marketing House</div>
-                    <div id="news" class="reviews__rating">
-                        <img width="13px" height="13px" src="img/star.svg" alt="">
-                        <img width="13px" height="13px" src="img/star.svg" alt="">
-                        <img width="13px" height="13px" src="img/star.svg" alt="">
-                        <img width="13px" height="13px" src="img/star.svg" alt="">
-                        <img width="13px" height="13px" src="img/star.svg" alt="">
-                    </div>
-                </div>
-            </div><!-- /.reviews__item -->
-        </div><!-- /.container -->
-    </div><!-- /.reviews -->
-    <!-- news -->
-    <section class="news">
-        <div class="container">
-            <div class="news__header">
-                <h3 class="news__title">read me</h3>
-                <div class="news__text">Sometimes i write something smart</div>
-            </div>
-            <div class="articles">
-                <div class="articles__col">
-                    <div class="articles__item">
-                        <div class="articles__header">
-                            <time class="articles__date">10<br>June</time>
-                            <a href="#"><img class="articles__photo" src="https://placehold.it/370x257" alt=""></a>
-                        </div>
-                        <div class="articles__content">
-                            <h4 class="articles__title">
-                                <a href="#">TEN THE BEST APP IN 2017</a>
-                            </h4>
-                            <div class="articles__cat">CATEGORY</div>
-                            <div class="articles__text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
-                            </div>
-                        </div>
-                        <a href="" class="btn btn--sm">READ MORE</a>
-                    </div>
-                </div>
-                <div class="articles__col">
-                    <div class="articles__item">
-                        <div class="articles__header">
-                            <time class="articles__date">10<br>June</time>
-                            <a href="#"><img class="articles__photo" src="https://placehold.it/370x257" alt=""></a>
-                        </div>
-                        <div class="articles__content">
-                            <h4 class="articles__title">
-                                <a href="#">TEN THE BEST APP IN 2017</a>
-                            </h4>
-                            <div class="articles__cat">CATEGORY</div>
-                            <div class="articles__text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
-                            </div>
-                        </div>
-                        <a href="" class="btn btn--sm">READ MORE</a>
-                    </div>
-                </div>
-                <div class="articles__col">
-                    <div class="articles__item">
-                        <div class="articles__header">
-                            <time class="articles__date">10<br>June</time>
-                            <a href="#"><img class="articles__photo" src="https://placehold.it/370x257" alt=""></a>
-                        </div>
-                        <div class="articles__content">
-                            <h4 class="articles__title">
-                                <a href="#">TEN THE BEST APP IN 2017</a>
-                            </h4>
-                            <div class="articles__cat">CATEGORY</div>
-                            <div class="articles__text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
-                            </div>
-                        </div>
-                        <a href="" class="btn btn--sm">READ MORE</a>
-                    </div>
-                </div>
-            </div> <!-- /.articles -->
-            <div class="news__footer">
-                <a class="news__link" href="#">See more posts</a>
-            </div>
-        </div> <!-- /.container -->
-    </section><!-- /.news -->
+    <!--  <div class="reviews">
+       <div class="container">
+           <div class="reviews__item">
+               <div class="reviews__text">
+                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis id inventore, ratione error similique, impedit quo voluptatibus repudiandae cupiditate dignissimos fugit excepturi eos incidunt quasi placeat amet, quibusdam quaerat!</p>
+               </div>
+               <div class="reviews__author">
+                   <img class="reviews__photo" src="https://placehold.it/103/333" alt="">
+                   <div class="reviews__name">Edward M. Brooks</div>
+                   <div class="reviews__company">Marketing House</div>
+                   <div id="news" class="reviews__rating">
+                       <img width="13px" height="13px" src="img/star.svg" alt="">
+                       <img width="13px" height="13px" src="img/star.svg" alt="">
+                       <img width="13px" height="13px" src="img/star.svg" alt="">
+                       <img width="13px" height="13px" src="img/star.svg" alt="">
+                       <img width="13px" height="13px" src="img/star.svg" alt="">
+                   </div>
+               </div>
+           </div>/.reviews__item
+       </div>/.container
+   </div>/.reviews
+   news
+   <section class="news">
+       <div class="container">
+           <div class="news__header">
+               <h3 class="news__title">read me</h3>
+               <div class="news__text">Sometimes i write something smart</div>
+           </div>
+           <div class="articles">
+               <div class="articles__col">
+                   <div class="articles__item">
+                       <div class="articles__header">
+                           <time class="articles__date">10<br>June</time>
+                           <a href="#"><img class="articles__photo" src="https://placehold.it/370x257" alt=""></a>
+                       </div>
+                       <div class="articles__content">
+                           <h4 class="articles__title">
+                               <a href="#">TEN THE BEST APP IN 2017</a>
+                           </h4>
+                           <div class="articles__cat">CATEGORY</div>
+                           <div class="articles__text">
+                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
+                           </div>
+                       </div>
+                       <a href="" class="btn btn--sm">READ MORE</a>
+                   </div>
+               </div>
+               <div class="articles__col">
+                   <div class="articles__item">
+                       <div class="articles__header">
+                           <time class="articles__date">10<br>June</time>
+                           <a href="#"><img class="articles__photo" src="https://placehold.it/370x257" alt=""></a>
+                       </div>
+                       <div class="articles__content">
+                           <h4 class="articles__title">
+                               <a href="#">TEN THE BEST APP IN 2017</a>
+                           </h4>
+                           <div class="articles__cat">CATEGORY</div>
+                           <div class="articles__text">
+                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
+                           </div>
+                       </div>
+                       <a href="" class="btn btn--sm">READ MORE</a>
+                   </div>
+               </div>
+               <div class="articles__col">
+                   <div class="articles__item">
+                       <div class="articles__header">
+                           <time class="articles__date">10<br>June</time>
+                           <a href="#"><img class="articles__photo" src="https://placehold.it/370x257" alt=""></a>
+                       </div>
+                       <div class="articles__content">
+                           <h4 class="articles__title">
+                               <a href="#">TEN THE BEST APP IN 2017</a>
+                           </h4>
+                           <div class="articles__cat">CATEGORY</div>
+                           <div class="articles__text">
+                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</p>
+                           </div>
+                       </div>
+                       <a href="" class="btn btn--sm">READ MORE</a>
+                   </div>
+               </div>
+           </div> /.articles
+           <div class="news__footer">
+               <a class="news__link" href="#">See more posts</a>
+           </div>
+       </div> /.container
+   </section>/.news -->
     <!-- footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__credits">
-                    <div class="footer__copyright">
-                        &copy; 2018 UI43 - Free Templates
-                    </div>
-                    <div class="footer__social">
-                        <a href="#" target="_blank"><img src="img/be1.png" alt=""></a>
-                        <a href="#" target="_blank"><img src="img/dribbble-1.png" alt=""></a>
-                        <a href="#" target="_blank"><img src="img/in1.png" alt=""></a>
-                        <a href="#" target="_blank"><img src="img/fb-1.png" alt=""></a>
-                        <a href="#" target="_blank"><img src="img/instagram-1.png" alt=""></a>
-                        <a href="#" target="_blank"><img src="img/twitter1.png" alt=""></a>
-                    </div>
-                </div><!-- /.footer__credits -->
-                <nav class="footer__nav">
-                    <a href="#" class="footer__nav-link">Work</a>
-                    <a href="#" class="footer__nav-link">About me</a>
-                    <a href="#" class="footer__nav-link">Blog</a>
-                    <a href="#" class="footer__nav-link">Contact</a>
-                    <a href="#" class="footer__nav-link footer__nav-link--btn">Hire me</a>
-                </nav>
-            </div><!-- /.footer__inner -->
-        </div><!-- /.container -->
-    </footer>
+    <!-- <footer class="footer">
+         <div class="container">
+             <div class="footer__inner">
+                 <div class="footer__credits">
+                     <div class="footer__copyright">
+                         &copy; 2018 UI43 - Free Templates
+                     </div>
+                     <div class="footer__social">
+                         <a href="#" target="_blank"><img src="img/be1.png" alt=""></a>
+                         <a href="#" target="_blank"><img src="img/dribbble-1.png" alt=""></a>
+                         <a href="#" target="_blank"><img src="img/in1.png" alt=""></a>
+                         <a href="#" target="_blank"><img src="img/fb-1.png" alt=""></a>
+                         <a href="#" target="_blank"><img src="img/instagram-1.png" alt=""></a>
+                         <a href="#" target="_blank"><img src="img/twitter1.png" alt=""></a>
+                     </div>
+                 </div>/.footer__credits
+                 <nav class="footer__nav">
+                     <a href="#" class="footer__nav-link">Work</a>
+                     <a href="#" class="footer__nav-link">About me</a>
+                     <a href="#" class="footer__nav-link">Blog</a>
+                     <a href="#" class="footer__nav-link">Contact</a>
+                     <a href="#" class="footer__nav-link footer__nav-link--btn">Hire me</a>
+                 </nav>
+             </div>/.footer__inner
+         </div>/.container
+     </footer> --> 
     <!-- Modals -->
     <div class="modal" id="modal_resume">
         <div class="modal__dialog">
@@ -351,8 +422,7 @@
         </div><!-- /.modal__dialog -->
     </div><!-- /.modal -->
     <!-- JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/libs.min.js"></script>>
+    <script src="js/libs.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 

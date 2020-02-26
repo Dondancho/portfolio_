@@ -4,14 +4,15 @@
 .user__avatar{
 	width: 57px;
     height: 57px;
-
-	border-radius: 50%;
 	
-	background: url(../img/avatar.jpg) top center no-repeat;
+	background: url(../img/logo.svg) top center no-repeat;
 	background-size: contain;
 }
 .user__content{
+	display: flex;
+	flex-direction: column;
 	padding-left: 9px;
+	justify-content: center;
 }
 .user__name{
 	font-size: 1.07rem;

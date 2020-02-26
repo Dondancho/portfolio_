@@ -3,31 +3,128 @@
 //Base
 @import 'base/_typography.scss';
 
-html{
-	font-size: 15px;
-}
-body{
-	margin: 0;
-	font-family: 'Montserrat', sans-serif;
-	font-size: 1rem;
 
-	&.no-scroll {
-		overflow: hidden;
-	}
-}
-h1, h2, h3, h4, h5, h6{
-	margin: 0;
+.loaderArea {
+    background: linear-gradient(90deg, #FFF 10%, #47646f 90%);
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100000;
 }
 
-*, *:before, *:after{
-	box-sizing: border-box;
+.load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+
+    z-index: 100000;
+}
+
+.load hr {
+    border: 0;
+    margin: 0;
+    width: 40%;
+    height: 40%;
+    position: absolute;
+    animation: spin 2.3s ease infinite;
+}
+
+.load :first-child {
+    background: #1e383c;
+    animation-delay: -1.5s;
+}
+
+.load :nth-child(2) {
+    background: #8ea6b2;
+    animation-delay: -1s;
+}
+
+.load :nth-child(3) {
+    background: #374028;
+    animation-delay: -0.5s;
+}
+
+.load :last-child {
+    background: #193B48;
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        transform: translate(0)
+    }
+
+    25% {
+        transform: translate(160%)
+    }
+
+    50% {
+        transform: translate(160%, 160%)
+    }
+
+    75% {
+        transform: translate(0, 160%)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+html {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
 
 //vendors
-@import 'vendors/_slick.scss';
+@import '_libs.scss';
 
-
+.main-slider{
+    height: 100vh;
+    margin-top: 80px;
+}
+.slick-slide.hide{
+    display: none !important;
+}
 //layout
 @import 'layout/_container.scss';
 @import 'layout/_header.scss';
@@ -51,3 +148,6 @@ h1, h2, h3, h4, h5, h6{
 @import 'layout/_contact.scss';
 @import 'layout/_form.scss';
 @import 'layout/_burger.scss';
+
+
+@import 'base/_media.scss';
